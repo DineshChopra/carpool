@@ -23,3 +23,25 @@ https://www.google.co.in/search?q=how+to+deploy+app+on+firebase&oq=how+to+deploy
 	firebase deploy
 	
 	
+-------------
+Run server in production mode 
+	update package.json file
+		"start:prod": "ng build --prod && cd dist/carpool && http-server -c-1"
+
+	Then execute server with following command
+	npm run start:prod
+-------------
+
+Web push notification
+install web-push library globally
+	npm install web-push -g
+	npm install web-push ---save
+Generating a vapid key with the web-push library
+	web-push generate-vapid-keys --json
+		It will returns that object
+			{"publicKey":"BHxVaHt28ADZRoJXuAJfc4au036-7YoHXA89ebFdPjpQhYIlFNfhF8X7spJ_OWWuwdPGWeCjtuL5_vRhqL5nISs",
+			 "privateKey":"HEOGQ7PSvGa17jWSf9TEIlcQClHF9ZegNT9mY91dbiw"}
+
+	public key is availabe for users and its public. It should not be secure.
+	private key is used for sending notification to the users.
+

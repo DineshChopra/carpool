@@ -17,6 +17,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { UserListComponent } from './users/user-list/user-list.component';
 import { UserComponent } from './users/user/user.component';
 import { UsersComponent } from './users/users.component';
+import { RideComponent } from './ride/ride.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { UsersComponent } from './users/users.component';
     EmployeeListComponent,
     UserListComponent,
     UserComponent,
-    UsersComponent
+    UsersComponent,
+    RideComponent
   ],
   imports: [
     BrowserModule,
