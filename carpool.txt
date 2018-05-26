@@ -45,3 +45,9 @@ Generating a vapid key with the web-push library
 	public key is availabe for users and its public. It should not be secure.
 	private key is used for sending notification to the users.
 
+------------------------
+install bootstrap and add in styles array of .angular.json file
+
+	`npm install bootstrap --save`
+	
+

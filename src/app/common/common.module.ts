@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
-import { HeaderComponent } from '../Common/header/header.component';
-import { FooterComponent } from '../Common/footer/footer.component';
-import { WelcomeComponent } from '../Common/welcome/welcome.component';
+import { HeaderComponent } from '../common/header/header.component';
+import { FooterComponent } from '../common/footer/footer.component';
+import { WelcomeComponent } from '../common/welcome/welcome.component';
 
 @NgModule({
   imports: [
