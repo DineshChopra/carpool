@@ -3,13 +3,14 @@ import { NgModule } from '@angular/core';
 import { FormsModule} from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { CommonModule } from './common/common.module';
+
 import { AppComponent } from './app.component';
 
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { environment } from '../environments/environment';
-import { TestComponent } from './test/test.component';
 import { EmployeesComponent } from './employees/employees.component';
 import { EmployeeComponent } from './employees/employee/employee.component';
 import { EmployeeListComponent } from './employees/employee-list/employee-list.component';
@@ -22,7 +23,6 @@ import { RideComponent } from './ride/ride.component';
 @NgModule({
   declarations: [
     AppComponent,
-    TestComponent,
     EmployeesComponent,
     EmployeeComponent,
     EmployeeListComponent,
@@ -38,7 +38,8 @@ import { RideComponent } from './ride/ride.component';
     ToastrModule.forRoot(),
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

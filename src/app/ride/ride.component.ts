@@ -41,7 +41,6 @@ export class RideComponent implements OnInit {
 
   shareRide() {
     console.log('shareRide is called ');
-    this.swPush.
   }
 
 }
