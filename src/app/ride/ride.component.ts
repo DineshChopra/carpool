@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SwPush } from '@angular/service-worker';
+import { } from 'web-push';
 import { RideService } from './ride.service';
 
 /*
@@ -40,6 +41,7 @@ export class RideComponent implements OnInit {
 
   shareRide() {
     console.log('shareRide is called ');
+    this.swPush.
   }
 
 }

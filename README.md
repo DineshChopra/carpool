@@ -30,4 +30,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ## PWA
 
 ## add service worker in existing application
+
+## angular-cli
+Create a module `ng generate module Common`
+Create a component `ng generate component Common/header`
     
