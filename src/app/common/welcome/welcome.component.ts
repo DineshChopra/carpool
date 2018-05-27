@@ -17,11 +17,11 @@ export class WelcomeComponent implements OnInit {
     this.adhaarViewFlag = true;
   }
 
-  private shareRideFun(){
-    this.router.navigate(['/bookRide']);
+  shareRideFun(){
+    this.router.navigate(['/shareRide']);
   }
   
-  private bookRideFun(){
+  bookRideFun(){
     this.router.navigate(['/bookRide']);
   }
 
