@@ -1,5 +1,3 @@
-<button (click)="goToHome()">Back </button>
-<hr />
 <div class="container">
   <h2 class="headerText">Book Ride</h2>
   <div class="col-xs-12 col-sm-6 col-md-12">
@@ -25,11 +23,19 @@
         <input type="text" class="form-control" id="time" placeholder="Time" name="time">
       </div>
       <div>
-        <button class="btn btn-default">Back</button>
+        <button class="btn btn-default" (click)="goToHome()">Back</button>
         <button type="submit" class="btn btn-default">Submit</button>
     </div>
     </form>
+    <div class="row" style="background-color:#bbb;">
+      <div class="col-xs-4 col-sm-6 col-md-4" style="background-color:#bbb;"><strong>Destination</strong></div>
+      <div class="col-xs-4 col-sm-6 col-md-4" style="background-color:#bbb;"><strong>Time</strong></div>
+      <div class="col-xs-4 col-sm-6 col-md-4" style="background-color:#bbb;"><strong>Vehical Number</strong></div>
+    </div>
+    <div class="row" style="background-color:#f3eeee;" *ngFor="let ride of api.actualRideList">
+      <div class="col-xs-4 col-sm-6 col-md-4">{{ride.endLocation}}</div>
+      <div class="col-xs-4 col-sm-6 col-md-4">{{ride.time}}</div>
+      <div class="col-xs-4 col-sm-6 col-md-4">{{ride.vehicalRegNumber}}</div>
+    </div>
   </div>
 </div>
-<hr>
-      
