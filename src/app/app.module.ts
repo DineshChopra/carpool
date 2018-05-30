@@ -3,13 +3,15 @@ import { NgModule } from '@angular/core';
 import { FormsModule} from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { CommonModule } from './common/common.module';
+import { CommonFeatureModule } from './common/common.module';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { AngularFireModule } from 'angularfire2';
+import {AngularFirestoreModule} from 'angularfire2/firestore';
+import {AngularFireAuthModule} from 'angularfire2/auth';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { environment } from '../environments/environment';
 import { EmployeesComponent } from './employees/employees.component';
@@ -40,8 +42,10 @@ import { RideComponent } from './ride/ride.component';
     ToastrModule.forRoot(),
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),
     AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAuthModule,
+    AngularFirestoreModule,
     AngularFireDatabaseModule,
-    CommonModule
+    CommonFeatureModule
   ],
   providers: [],
   bootstrap: [AppComponent]

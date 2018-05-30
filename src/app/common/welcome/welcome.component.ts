@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { LoginService } from '../../core/login/login.service';
 
 @Component({
   selector: 'app-welcome',
@@ -11,7 +12,7 @@ export class WelcomeComponent implements OnInit {
   private adhaarViewFlag: boolean = false;
   private otpViewFlag: boolean = false;
   
-  constructor(private router: Router) { }
+  constructor(private router: Router, public auth:LoginService) { }
 
   ngOnInit() {
     this.adhaarViewFlag = true;
@@ -23,6 +24,9 @@ export class WelcomeComponent implements OnInit {
   
   bookRideFun(){
     this.router.navigate(['/bookRide']);
+  }
+  async signInWithGoogle(){
+    await this.auth.googleLogin();
   }
 
 }
