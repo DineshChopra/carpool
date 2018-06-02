@@ -10,7 +10,7 @@ import { FireBaseService } from '../fire-base.service';
 })
 export class BookRideComponent implements OnInit {
 
-  constructor(private router: Router, private api: FireBaseService) { }
+  constructor(private router: Router, public api: FireBaseService) { }
 
   ngOnInit() {
     this.api.getData();

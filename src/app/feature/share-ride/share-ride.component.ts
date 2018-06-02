@@ -10,8 +10,8 @@ import { FireBaseService } from '../fire-base.service';
   styleUrls: ['./share-ride.component.css']
 })
 export class ShareRideComponent implements OnInit {
-  private ride:any = {};
-  constructor(private router: Router, private api:FireBaseService) { }
+  public ride: any = {};
+  constructor(private router: Router, public api:FireBaseService) { }
 
   ngOnInit() {
     this.ride.startLocation='';
