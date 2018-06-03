@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { LoginService } from '../../core/login/login.service';
 import { SwPush } from '@angular/service-worker';
 import { WelcomeService } from './welcome.service';
 /*
@@ -37,9 +36,9 @@ export class WelcomeComponent implements OnInit {
   bookRideFun() {
     this.router.navigate(['/bookRide']);
   }
-  async signInWithGoogle() {
-    await this.auth.googleLogin();
-  }
+  loginUser(){
+    this.router.navigate(['/login']);
+  }  
 
   registerForPushNotification() {
     this.swPush.requestSubscription({

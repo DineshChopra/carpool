@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 
 import {AngularFireAuth} from 'angularfire2/auth';
 import {AngularFirestore, AngularFirestoreDocument} from 'angularfire2/firestore';
+import {AngularFireDatabase, AngularFireList} from 'angularfire2/database';
 
 import {firebase} from '@firebase/app';
 
@@ -21,10 +22,13 @@ interface User{
 
 export class LoginService {
   user:Observable<User | null>;
+  userList:AngularFireList<any>;
   constructor(
     private afAuth:AngularFireAuth,
-    private afs:AngularFirestore
-  ) { 
+    private afs:AngularFirestore,
+    private fireBaseDB: AngularFireDatabase
+  ) {
+    this.userList = this.fireBaseDB.list('userLoginData'); 
     this.user = this.afAuth.authState.pipe(
       switchMap(user =>{
         if(user){
@@ -41,8 +45,14 @@ export class LoginService {
     const provider = new firebase.auth.GoogleAuthProvider();
     return this.oAuthLogin(provider);
   }
+  facebookLogin(){
+    const provider = new firebase.auth.FacebookAuthProvider();
+    return this.oAuthLogin(provider);
+  }
+  
   private oAuthLogin(provider:any){
-    return this.afAuth.auth.signInWithRedirect(provider).then(loginUser =>{
+    return this.afAuth.auth.signInWithPopup(provider).then(loginUser =>{
+      this.insertUser(loginUser.additionalUserInfo.profile);
       return this.updateUserData(loginUser.user);
     })
   }
@@ -56,5 +66,17 @@ export class LoginService {
       photoURL: user.photoURL || 'No image Available'
     }
     return userRef.set(data);
+  }
+  private insertUser(user){
+    this.userList.push({
+      userEmail:user.email,
+      userName: user.name,
+      userPicture: user.picture,
+    }).then(success =>{
+      console.log("user data is saved")
+    },
+  error=>{
+    console.log("user data is not saved")
+  })
   }
 }

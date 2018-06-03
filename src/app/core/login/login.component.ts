@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { LoginService } from './login.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  constructor( public auth:LoginService) { }
 
   ngOnInit() {
   }
-
+  async signInWithGoogle(){
+    await this.auth.googleLogin();
+  }
+  async signInWithFacebook(){
+    await this.auth.facebookLogin();
+  }
 }

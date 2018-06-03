@@ -9,3 +9,25 @@ button:hover,a.btn:hover{
 .btn-google {
     background-color: #DD4B39;
   }
+  .btn-twitter {
+    background-color: #55ACEE;
+  }
+  .btn-facebook {
+    background-color: #3B5998;
+  }
+  
+  .btn-github {
+    background-color: #333333;
+  }
+  
+  .btn-google {
+    background-color: #DD4B39;
+  }
+  
+  .btn-social.button[disabled] {
+    color: #333333;
+    background-color: #fff;
+    border-color: #dbdbdb;
+    box-shadow: none;
+    opacity: .6;
+  }

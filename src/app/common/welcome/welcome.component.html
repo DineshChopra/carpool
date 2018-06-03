@@ -1,22 +1,15 @@
 <div class="container">
-  <button class="btn btn-success" (click)="registerForPushNotification()" [disabled]="sub">Register for push notification</button>
-  <hr />
-  <button class="btn btn-success" (click)="sendPushNotification()">Send Push Notification</button>
-  <hr />
-  <button class="btn btn-success" (click)="shareRideFun()">Share Ride</button>
-  <hr />
-  <button class="btn btn-success" (click)="bookRideFun()">Book Ride </button>
-  <hr>
-  <div *ngIf="!(auth.user | async); else alreadyLoggedIn">
-    <button (click)="signInWithGoogle()" class="button btn-social btn-google">
-      <i class="fa fa-google fa-lg"></i> Connect Google
-    </button>
-  </div>
-  <ng-template #alreadyLoggedIn>
-    <p class="text-success">
-      You are logged in
-      <i class="fa fa-thumbs-up"></i>
-    </p>
-  </ng-template>
+        <button class="btn btn-success" 
+                (click)="shareRideFun()">Share Ride</button>
+        <hr />
+        <button class="btn btn-success" 
+                (click)= "bookRideFun()">Book Ride </button>
+        <hr>
+        <div>
+                <button (click)="loginUser()" class="button btn-social btn-google">
+                <i class="fa fa-google fa-lg"></i> SignUp
+              </button>
+        </div>
+        
 
 </div>

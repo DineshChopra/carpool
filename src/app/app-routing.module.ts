@@ -9,6 +9,7 @@ const appRoutes: Routes = [
     {path: '', component: WelcomeComponent},
     {path: 'bookRide', loadChildren: './feature/book-ride/book-ride.module#BookRideModule'},
     {path: 'shareRide', loadChildren: './feature/share-ride/share-ride.module#ShareRideModule'},
+    {path: 'login', loadChildren: './core/login/login.module#LoginModule'}
     // {path: 'tab1', canActivate: [AuthGuard], component: MAuthenticationComponent},
     // // {path: 'verification', canActivate: [AuthGuard], component: MAuthenticationComponent},
    
