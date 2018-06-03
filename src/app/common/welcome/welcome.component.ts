@@ -21,7 +21,6 @@ export class WelcomeComponent implements OnInit {
   sub: PushSubscription;
 
   constructor(private router: Router,
-              public auth: LoginService,
               private swPush: SwPush,
               private service: WelcomeService) { }
 
